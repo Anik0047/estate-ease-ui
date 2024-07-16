@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar/Navbar"
 import "./layout.scss"
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <div className="layout">
-      hello world
+      <Navbar></Navbar>
     </div>
   )
 }
