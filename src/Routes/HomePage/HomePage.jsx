@@ -2,7 +2,10 @@ import './HomePage.scss'
 
 function HomePage(){
   return (
-    <div className='homePage'>HomePage</div>
+    <div className='homePage'>
+        <div className='textContainer'>text</div>
+        <div className='imgContainer'>img</div>
+    </div>
   )
 }
 
