@@ -7,8 +7,12 @@ function App() {
 
   return (
     <div className="layout">
-      <Navbar></Navbar>
-      <HomePage></HomePage>
+      <div className="navbar">
+        <Navbar></Navbar>
+      </div>
+      <div className="content">
+        <HomePage></HomePage>
+      </div>
     </div>
   )
 }
