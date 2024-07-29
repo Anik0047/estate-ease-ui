@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import ListPage from "./Routes/ListPage/ListPage";
 import Layout from "./Routes/Layout/Layout";
+import SinglePage from "./Routes/SinglePage/SinglePage";
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
         {
           path:"/list",
           element: <ListPage />
+        },
+        {
+          path:"/:id",
+          element: <SinglePage />
         }
       ]
     }
