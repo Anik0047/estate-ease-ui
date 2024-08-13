@@ -13,7 +13,7 @@ function Slider({images}){
         setImageIndex(imageIndex - 1);
       }
     }else{
-      if(imageIndex === images.length-1){
+      if(imageIndex === images.length - 1){
         setImageIndex(0);
       }else{
         setImageIndex(imageIndex + 1);
@@ -47,7 +47,7 @@ return (
       </div>
       <div className="smallImages">
         {images.slice(1).map((image,index) => (
-          <img src={image} key={index} onClick={()=> setImageIndex(index+1)}/>
+          <img src={image} key={index} onClick={()=> setImageIndex(index + 1)}/>
         ))}
       </div>
     </div>
