@@ -1,3 +1,5 @@
+@import "../../responsive.scss";
+
 .singlePage{
     display: flex;
     height: 100%;
@@ -6,11 +8,24 @@
         width: 1px;
       }
 
+      @include md{
+        flex-direction: column;
+      }
+
     .details{
         flex: 3;
 
+        @include md{
+            margin-bottom: 50px;
+          }
+
         .wrapper{
             padding-right: 50px;
+
+            @include sm{
+                padding-right: 0px;
+            }
+
             height: 100%;
 
             .info{
@@ -81,14 +96,18 @@
     .features{
         flex: 2;
         background-color: #fcf5f3;
+        height: max-content;
+        padding-bottom: 50px;
+
+        @include md{
+            padding-top: 50px;
+        }
 
         .wrapper{
             padding: 0 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            padding-bottom: 50px;
-            background-color: #fcf5f3;
 
             img{
                 width: 24px;
@@ -140,6 +159,10 @@
             .sizes{
                 display: flex;
                 justify-content: space-between;
+
+                @include lg{
+                    font-size: 12px;
+                }
 
                 .size{
                     display: flex;
