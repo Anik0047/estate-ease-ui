@@ -29,6 +29,10 @@
                 @include lg{
                     font-size: 48px;
                 }
+
+                @include sm{
+                    font-size: 30px;
+                }
             }
 
             .boxes{
