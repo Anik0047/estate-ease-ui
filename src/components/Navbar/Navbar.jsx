@@ -6,6 +6,8 @@ function Navbar() {
 
     const [open,setOpen] = useState(false);
 
+    const user = true;
+
     return (
         <nav>
             <div className="left">
@@ -19,8 +21,18 @@ function Navbar() {
                 <Link to="">Agents</Link>
             </div>
             <div className="right">
+                { user ? 
+                (<div className="user">
+                    <img src="/profile.png" alt="" />
+                    <span>Anik Barua</span>
+                    <Link to="/profile" className="profile">
+                        <div className="notification">3</div>
+                        <span>Profile</span>
+                    </Link>
+                </div>) : ( <>
                 <Link to="">Sign In</Link>
                 <Link to="" className="register">Sign Up</Link>
+                </>)}
                 <div className="menuIcon">
                     <img src="/menu.png" alt="" onClick={()=>setOpen((prev)=> !prev)}/>
                 </div>
