@@ -1,3 +1,4 @@
+import Chat from '../../components/Chat/Chat'
 import List from '../../components/List/List'
 import './ProfilePage.scss'
 
@@ -27,7 +28,9 @@ return (
             </div>
         </div>
         <div className="chatContainer">
-            <div className="wrapper"></div>
+            <div className="wrapper">
+                <Chat/>
+            </div>
         </div>
     </div>
   )
