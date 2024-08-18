@@ -55,12 +55,7 @@ nav{
         align-items: center;
         justify-content: flex-end;
         background-color: #fcf5f3;
-        height: 100%;
-
-
-        @include md{
-            background-color: transparent;
-        }
+        height: 100%; 
 
 
         a{
@@ -115,6 +110,7 @@ nav{
             background-color: #fece51;
         }
 
+
         .menuIcon{
             display: none;
             z-index: 999;
@@ -124,6 +120,7 @@ nav{
                 height: 36px;
                 cursor: pointer;
             }
+
 
             @include sm{
                 display: initial;
@@ -148,6 +145,13 @@ nav{
 
             &.active{
                 right: 0;
+            }
+
+
+            @include md{
+                width: 0;
+                right: 0;
+                display: none;
             }
 
             @include sm{
