@@ -1,16 +1,16 @@
-import HomePage from "./Routes/HomePage/HomePage"
+import HomePage from "./routes/homePage/homePage";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ListPage from "./Routes/ListPage/ListPage";
-import Layout from "./Routes/Layout/Layout";
-import SinglePage from "./Routes/SinglePage/SinglePage";
-import ProfilePage from "./Routes/ProfilePage/ProfilePage";
-
+import ListPage from "./routes/listPage/listPage";
+import Layout from "./routes/layout/layout";
+import SinglePage from "./routes/singlePage/singlePage";
+import ProfilePage from "./routes/profilePage/profilePage";
+import Login from "./routes/login/login";
+import Register from "./routes/register/register";
 
 function App() {
-  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -18,19 +18,27 @@ function App() {
       children:[
         {
           path:"/",
-          element: <HomePage />
+          element:<HomePage/>
         },
         {
           path:"/list",
-          element: <ListPage />
+          element:<ListPage/>
         },
         {
           path:"/:id",
-          element: <SinglePage />
+          element:<SinglePage/>
         },
         {
           path:"/profile",
-          element: <ProfilePage />
+          element:<ProfilePage/>
+        },
+        {
+          path:"/login",
+          element:<Login/>
+        },
+        {
+          path:"/register",
+          element:<Register/>
         }
       ]
     }
@@ -38,11 +46,8 @@ function App() {
 
   return (
 
-
-
-  <RouterProvider router={router} />
-  )
-
+    <RouterProvider router={router}/>
+  );
 }
 
-export default App
+export default App;
