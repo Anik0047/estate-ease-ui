@@ -9,14 +9,14 @@ function Navbar() {
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
+        <Link to=""  className="logo">
           <img src="/logo.png" alt="" />
           <span>LamaEstate</span>
-        </a>
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        </Link>
+        <Link to="" >Home</Link>
+        <Link to="" >About</Link>
+        <Link to="" >Contact</Link>
+        <Link to="" >Agents</Link>
       </div>
       <div className="right">
         {user ? (
@@ -27,16 +27,16 @@ function Navbar() {
             />
             <span>John Doe</span>
             <Link to="/profile" className="profile">
-              <div className="notification">3</div>
               <span>Profile</span>
+              <div className="notification">3</div>
             </Link>
           </div>
         ) : (
           <>
-            <a href="/">Sign in</a>
-            <a href="/" className="register">
+            <Link to="/login" >Sign in</Link>
+            <Link to="/register"  className="register">
               Sign up
-            </a>
+            </Link>
           </>
         )}
         <div className="menuIcon">
@@ -51,8 +51,8 @@ function Navbar() {
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <a href="/login">Sign in</a>
+          <a href="/register">Sign up</a>
         </div>
       </div>
     </nav>
