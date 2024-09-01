@@ -4,19 +4,13 @@ import "./profilePage.scss";
 import apiRequest from "../../lib/apiRequest"
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 function ProfilePage() {
 
   const {currentUser, updateUser} = useContext(AuthContext)
 
   const navigate = useNavigate()
-
-  useEffect(()=>{
-    if(!currentUser){
-      navigate("/login")
-    }
-  },[currentUser, navigate])
 
   const handleLogout = async () =>{
 
@@ -37,7 +31,6 @@ function ProfilePage() {
   }
 
   return (
-    currentUser && ( 
     <div className="profilePage">
       <div className="details">
         <div className="wrapper">
@@ -77,7 +70,7 @@ function ProfilePage() {
           <Chat/>
         </div>
       </div>
-    </div>)
+    </div>
   );
 }
 
