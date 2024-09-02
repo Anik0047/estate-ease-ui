@@ -16,18 +16,31 @@ function ProfileUpdatePage() {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
+
     e.preventDefault()
+
     const formData = new FormData(e.target)
+
     const {username,email,password} = Object.fromEntries(formData)
+
     try{
+
       const response= await apiRequest.put(`/users/${currentUser.id}`, {
+
         username, email, password, avatar
+
       })
+
       updateUser(response.data)
+
       navigate("/profile")
+
     }catch(error){
+
       console.log(error)
+
       setError(error.response.data.message)
+      
     }
   }
 
