@@ -11,7 +11,7 @@ function ProfileUpdatePage() {
 
   const [error, setError] = useState("")
 
-  const [avatar, setAvatar] = useState(currentUser.avatar)
+  const [avatar, setAvatar] = useState([])
 
   const navigate = useNavigate()
 
@@ -27,7 +27,7 @@ function ProfileUpdatePage() {
 
       const response= await apiRequest.put(`/users/${currentUser.id}`, {
 
-        username, email, password, avatar
+        username, email, password, avatar:avatar[0]
 
       })
 
@@ -76,7 +76,7 @@ function ProfileUpdatePage() {
         </form>
       </div>
       <div className="sideContainer">
-        <img src={avatar || "/noavatar.jpg" } alt="" className="avatar" />
+        <img src={avatar[0] || currentUser.avatar || "/noavatar.jpg" } alt="" className="avatar" />
 
         <UploadWidget uwConfig={{
           cloudName: "anikbarua",
@@ -85,7 +85,7 @@ function ProfileUpdatePage() {
           maxImageFileSize: 2000000,
           folder: "avatars"
         }}
-        setAvatar={setAvatar}
+        setState={setAvatar}
         />
       </div>
     </div>
