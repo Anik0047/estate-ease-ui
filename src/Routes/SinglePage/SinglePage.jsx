@@ -32,7 +32,6 @@ function SinglePage() {
       await apiRequest.post("/users/save", {postId: post.id})
 
     }catch(error){
-      console.log(error)
       setSaved((prev) => !prev)
     }
   }
